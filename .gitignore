@@ -1,4 +1,4 @@
 __pycache__
 .vscode/
-static/*.mp4
-output/*.mp3
+static/*.mp3
+upload/*.mp3

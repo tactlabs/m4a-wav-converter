@@ -21,22 +21,30 @@
                             <input type="file" class="custom-file-input" name="audio" id="audio">
                             <select id="format" name="format">
                                 <option value="wav">WAV</option>
-                              
+
                                 <!-- <option value="midi">MIDI</option> -->
-                  
-                  
-                  
-                  
-                              </select>
-                            
+
+
+
+
+                            </select>
+
                         </div>
                         <div class="posi">
-                            <button type="submit" class="btn btn-primary" style="box-shadow: 1 5px 7px rgba(0,0,0,0.2);color:black;background-color:#2e7a06;;border-width: 0%;">ConvertNow</button>
+                            <button type="submit" class="btn btn-primary" onclick="myFunction()"
+                                style="box-shadow: 1 5px 7px rgba(0,0,0,0.2);color:black;background-color:#2e7a06;;border-width: 0%;">ConvertNow</button>
 
-                            
-                            
+
+
                         </div>
                     </div>
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                             {% for message in messages %}
+                                <p>{{ message }}</p>
+                            {% endfor %}
+                         {% endif %}
+                    {% endwith %}
                     <br>
 
                     <!-- <button type="submit" class="btn btn-primary"
@@ -45,8 +53,14 @@
 
                 </form>
 
+
             </div>
         </div>
     </div>
 </div>
+<script>
+    function myFunction() {
+      alert("Your audio file is converting...");
+    }
+    </script>
 {% endblock %}
